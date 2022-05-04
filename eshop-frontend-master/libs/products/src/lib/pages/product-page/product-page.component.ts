@@ -38,6 +38,7 @@ export class ProductPageComponent implements OnInit, OnDestroy {
   quantity = 1;
   currentId;
   selected = false;
+  button = true;
   selectedSize: Variant[] = [];
   availability: any[] = [];
   minInv: number;
@@ -161,6 +162,7 @@ export class ProductPageComponent implements OnInit, OnDestroy {
 
   selectSize(event: any, index) {
     this.selected = true;
+    this.button = false;
     const temp = event.target.innerHTML;
     console.log(temp);
 
