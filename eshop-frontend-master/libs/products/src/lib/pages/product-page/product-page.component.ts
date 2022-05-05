@@ -147,8 +147,8 @@ export class ProductPageComponent implements OnInit, OnDestroy {
   }
 
   _getWSizes() {
-    this.wVariantService
-      .getW_Variants()
+    this.variantService
+      .getVariants()
       .pipe(takeUntil(this.endSubs$))
       .subscribe((variants) => {
         this.variants = variants;
@@ -198,7 +198,7 @@ export class ProductPageComponent implements OnInit, OnDestroy {
     });
   }
   getWProdByname() {
-    this.WprodService.getProductByName(this.W_prodname).subscribe(
+    this.prodService.getProductByName(this.W_prodname).subscribe(
       (products) => {
         this.products = products;
         console.log(this.products);

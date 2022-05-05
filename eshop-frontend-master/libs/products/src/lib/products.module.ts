@@ -18,9 +18,10 @@ import {InputNumberModule} from 'primeng/inputnumber';
 // eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
 import { UiModule } from '@eshop-frontend/ui';
 import { ProductsBrandsComponent } from './pages/products-brands/products-brands.component';
+import { CarouselProductsBrandsComponent } from './pages/carousel-products-brands/carousel-products-brands.component';
 
-import { WomenProductsListComponent } from './pages/women-products-list/women-products-list.component';
-import { WomenProductsBrandsComponent } from './pages/women-products-brands/women-products-brands.component';
+// import { WomenProductsListComponent } from './pages/women-products-list/women-products-list.component';
+// import { WomenProductsBrandsComponent } from './pages/women-products-brands/women-products-brands.component';
 
 
 
@@ -30,7 +31,15 @@ const routes: Routes = [
     component: ProductsListComponent,
   },
   {
+    path: 'women-products',
+    component: ProductsListComponent,
+  },
+  {
     path: 'products/category/:categoryid',
+    component: ProductsListComponent,
+  },
+  {
+    path: 'women-products/category/:categoryid',
     component: ProductsListComponent,
   },
   {
@@ -38,28 +47,20 @@ const routes: Routes = [
     component: ProductPageComponent,
   },
   {
-    path: 'products/brand/:brandId',
-    component: ProductsBrandsComponent,
-  },
-    {
-    path: 'products/brand/:brandId/:brandName',
-    component: ProductsBrandsComponent,
-  },
-  {
-    path: 'women-products',
-    component: ProductsListComponent,
-  },
-  {
     path: 'women-products/:productId',
     component: ProductPageComponent,
   },
   {
-    path: 'women-products/category/:categoryid',
-    component: ProductsListComponent,
+    path: 'products/brand/:brandId',
+    component: ProductsBrandsComponent,
   },
   {
     path: 'women-products/brand/:brandId',
     component: ProductsBrandsComponent,
+  },
+  {
+    path: 'products/brand/name/:brandName',
+    component: CarouselProductsBrandsComponent,
   },
 ];
 
@@ -82,8 +83,8 @@ const routes: Routes = [
     ProductsListComponent,
     ProductPageComponent,
     ProductsBrandsComponent,
-    WomenProductsListComponent,
-    WomenProductsBrandsComponent
+    CarouselProductsBrandsComponent,
+
   ],
   exports: [
     ProductsSearchComponent,

@@ -25,6 +25,7 @@ export class ProductsBrandsComponent implements OnInit {
   categories: Category[] = [];
   url;
   _urlSegment;
+  fromCarousel: boolean;
 
   constructor(private route: ActivatedRoute,
               private productsService: ProductsService,
@@ -36,23 +37,32 @@ export class ProductsBrandsComponent implements OnInit {
     this.url = this.route.url;
     this._urlSegment = this.url.value[0].path
     console.log(this._urlSegment);
+ 
 
-    if(this._urlSegment === "products"){
-      this._retrieveId();
-      this._getProdByBrand();
-      this.route.params.subscribe((params)=>{
-        params.categoryid? this._getProducts([params.categoryid]) : this._getProdByBrand();
-      })
-      this._getCategories();
+        if(this._urlSegment === "products"){
+          this._retrieveId();
+          this._getProdByBrand();
+          this.route.params.subscribe((params)=>{
+            params.categoryid? this._getProducts([params.categoryid]) : this._getProdByBrand();
+          })
+          this._getCategories();
+          this.fromCarousel = false;
+    
+        }
+        else{
+          this._retrieveId();
+          this._getWProdByBrand();
+          this.route.params.subscribe((params)=>{
+            params.categoryid? this._getWProducts([params.categoryid]) : this._getWProdByBrand();
+          })
+          this._getCategories();
+          this.fromCarousel =  false;
+        }
+      
 
-    }else{
-      this._retrieveId();
-      this._getWProdByBrand();
-      this.route.params.subscribe((params)=>{
-        params.categoryid? this._getWProducts([params.categoryid]) : this._getWProdByBrand();
-      })
-      this._getCategories();
-    }
+    
+
+
   }
 
   private _retrieveId(){
@@ -128,6 +138,7 @@ export class ProductsBrandsComponent implements OnInit {
     }
     
   }
+
 
 
 }
