@@ -59,7 +59,7 @@ const routes: Routes = [
     component: ProductsBrandsComponent,
   },
   {
-    path: 'products/brand/name/:brandName',
+    path: 'products/brand/name/:brandName/:brandId',
     component: CarouselProductsBrandsComponent,
   },
 ];

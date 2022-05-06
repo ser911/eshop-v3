@@ -2,7 +2,7 @@
   <div class="grid">
     <div class="categories-side md:col-3 lg:col-2 xl:col-3 categories">
 
-      <h4>Categories</h4>
+      <h4>Categorie</h4>
       <div class="p-field-checkbox" *ngFor="let category of categories">
         <p-checkbox [(ngModel)]="category.checked" [binary]=binaryProp [inputId]="category.id!"
           (onChange)="categoryFilter()"></p-checkbox>
