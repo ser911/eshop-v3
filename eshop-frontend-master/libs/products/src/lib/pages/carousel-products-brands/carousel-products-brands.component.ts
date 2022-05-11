@@ -124,14 +124,14 @@ export class CarouselProductsBrandsComponent implements OnInit {
   }
 
   menOnly(){
-    if(this.selected_1){
-      this.selected_1 = false;
-    }else{
+    // if(this.selected_1){
+    //   this.selected_1 = false;
+    // }else{
 
-      this.selected_1 = true;
-      this.firstFilter =  this.filteredProducts.filter((x)=> x.sex === 'M');
-        console.log(this.firstFilter);
-    }
+    //   this.selected_1 = true;
+    //   this.firstFilter =  this.filteredProducts.filter((x)=> x.sex === 'M');
+    //     console.log(this.firstFilter);
+    // }
      
   }
   womenOnly(){
